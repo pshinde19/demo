@@ -1,0 +1,20 @@
+
+.chatbox-main #chatbox-main-ul::-webkit-scrollbar{
+    height: 6px;
+    width: 6px;
+}
+
+.chatbox-main #chatbox-main-ul::-webkit-scrollbar-thumb,::-webkit-scrollbar-thumb  {
+    background: #02ADCF;
+    /* border-radius: 5px; */
+  }
+
+  .chatbox-main #chatbox-main-ul::-webkit-scrollbar-track ,::-webkit-scrollbar-track{
+     background-color: lightgray;
+     /* border-radius: 5px; */
+  }
+
+  ::-webkit-scrollbar{
+    height: 4px;
+    width: 4px;
+}
