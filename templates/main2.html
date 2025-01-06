@@ -1,1 +1,375 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Dataverse</title>
+    <!-- Genpact_logo only_color_rgb.png static\Logos\newlogos\scouticon1080x1080.png-->
+    <link rel="icon" href="{{url_for('static',filename='newlogos/sicon.png')}}" type="image/png">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/loaders.css')}}">
+    <script src="{{url_for('static',filename='js/plotly-2.34.0.min.js')}}" ></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/script2.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/mymodal.css')}}">
+    <link href="{{url_for('static',filename='css/select2.min.css')}}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/sweetalert2.min.css')}}">
+    <script src="{{url_for('static',filename='js/sweetalert2.all.min.js')}}"></script>
+
+    <script src="{{url_for('static',filename='js/msal.js')}}"></script>
+    <script src="{{url_for('static',filename='js/purify.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/auth.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/font.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/scrollbar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/media.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/sidebar.css')}}">
+
+    <style>
+        .pageloader-parent{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgb(0 0 0 / 60%);
+            z-index: 100000000;
+        }
+    </style>
+    
+</head>
+<body  style="overflow: hidden;">
+   <!-- page loader start-->
+    <div id="p-loader" class="pageloader-parent" style="height: 100vh;width: 100vw;display: flex;justify-content: center;align-items: center;">
+        <div style="text-align: center;display: flex;justify-content: center;">
+            <span class="pageloader"></span>
+            <div style="color: white;padding-top: 50px;letter-spacing: 1px;font-weight: 600;">
+                <span>Loading...</span>
+            </div>
+        </div>
+        
+    </div>
+   <!-- page loader ends -->
+    <!-- container starts-->
+    <div class="wrapper">
+      <!-- sidebar starts -->
+      <div class="leftwing " id="lwing">
+        <div class="sidebar-header">
+            <img src="../static/newlogos/gen.svg" alt="" srcset="" id="logo1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" onclick="toggle_historybar(this)">
+                <path id="close" d="M17.142,5.683a.907.907,0,0,0-1.283,0l-4.451,4.442L6.957,5.674A.907.907,0,0,0,5.674,6.957l4.451,4.451L5.674,15.859a.907.907,0,0,0,1.283,1.283l4.451-4.451,4.451,4.451a.907.907,0,0,0,1.283-1.283l-4.451-4.451,4.451-4.451a.912.912,0,0,0,0-1.274" transform="translate(-5.408 -5.408)"/>
+            </svg>
+              
+        </div>
+        <div class="leftwing-wrapper">
+            <div class="sidebar-body" style="padding-top: 8px;">
+                <div class="search-body">
+                    <p>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path fill="#00AECF" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                        </svg> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path fill="#00AECF" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                        </svg>
+                        <b style="">Favourites</b></p>
+                    <!-- <div style="padding: 5px 0px;">
+                        <div class="search-history-inp-parent">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#102345" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                            <input type="search" name="" id="search_history" placeholder="Search....">
+                        </div>
+                    </div> -->
+                </div>
+                <div>
+                    <ul class="history-ul">
+                       
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="faqbody">
+                <div class="faq_p_body">
+                    <p>
+                       <!-- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16">
+                        <path fill="#00AECF" d="M12.07 4.25c-1.62 0-3 .94-4.07 2.79c-1.08-1.85-2.45-2.79-4.07-2.79A3.84 3.84 0 0 0 0 8a3.84 3.84 0 0 0 3.93 3.75c1.62 0 3-.94 4.07-2.79c1.08 1.85 2.45 2.79 4.07 2.79A3.84 3.84 0 0 0 16 8a3.84 3.84 0 0 0-3.93-3.75M3.93 10.5A2.6 2.6 0 0 1 1.25 8a2.6 2.6 0 0 1 2.68-2.5c1.25 0 2.29.82 3.18 2.5c-.89 1.68-1.93 2.5-3.18 2.5m8.14 0c-1.25 0-2.29-.82-3.18-2.5c.89-1.68 1.93-2.5 3.18-2.5A2.6 2.6 0 0 1 14.75 8a2.6 2.6 0 0 1-2.68 2.5" />
+                       </svg> -->
+                       <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                          <path fill="#00AECF" d="M8 0c4.42 0 8 3.58 8 8s-3.58 8-8 8s-8-3.58-8-8s3.58-8 8-8m0 1C4.13 1 1 4.13 1 8s3.13 7 7 7s7-3.13 7-7s-3.13-7-7-7m0 10.2a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5m0-8.25a2.5 2.5 0 0 1 2.5 2.5c0 .523-.167.923-.423 1.24a3 3 0 0 1-.624.561l-.167.117c-.262.182-.451.317-.586.483a.88.88 0 0 0-.2.598v1a.5.5 0 0 1-1 0v-1c0-.519.168-.916.425-1.23c.185-.226.413-.404.616-.55l.173-.12c.26-.182.449-.318.584-.486A.9.9 0 0 0 9.5 5.45a1.5 1.5 0 0 0-3 0a.5.5 0 0 1-1 0A2.5 2.5 0 0 1 8 2.95" />
+                       </svg> -->
+                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path fill="#00AECF" d="M8 0c4.42 0 8 3.58 8 8s-3.58 8-8 8s-8-3.58-8-8s3.58-8 8-8m0 1C4.13 1 1 4.13 1 8s3.13 7 7 7s7-3.13 7-7s-3.13-7-7-7m0 10.2a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5m0-8.25a2.5 2.5 0 0 1 2.5 2.5c0 .523-.167.923-.423 1.24a3 3 0 0 1-.624.561l-.167.117c-.262.182-.451.317-.586.483a.88.88 0 0 0-.2.598v1a.5.5 0 0 1-1 0v-1c0-.519.168-.916.425-1.23c.185-.226.413-.404.616-.55l.173-.12c.26-.182.449-.318.584-.486A.9.9 0 0 0 9.5 5.45a1.5 1.5 0 0 0-3 0a.5.5 0 0 1-1 0A2.5 2.5 0 0 1 8 2.95" />
+                        </svg>
+                       
+                        <b style="">Frequently Asked</b></p>
+                </div>
+                <div>
+                    <ul class="faqullist">
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="prev_questions">
+                <div class="prev_questions_body">
+                    <p>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="#00AECF" d="M6.865 6.882A7.25 7.25 0 1 1 4.75 12a.75.75 0 0 0-1.5 0a8.75 8.75 0 1 0 2.552-6.176a1 1 0 0 0-.07.08L4.475 4.646a.5.5 0 0 0-.852.309L3.27 8.844a.5.5 0 0 0 .543.543l3.89-.354a.5.5 0 0 0 .307-.851L6.782 6.954a1 1 0 0 0 .083-.072" />
+                            <path fill="#00AECF" d="M12.75 7a.75.75 0 0 0-1.5 0v5a.75.75 0 0 0 .352.636l3 1.875a.75.75 0 1 0 .796-1.272l-2.648-1.655z" />
+                        </svg> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18   " height="18" viewBox="0 0 16 16">
+                            <path fill="#00AECF" fill-rule="evenodd" d="M13.507 12.324a7 7 0 0 0 .065-8.56A7 7 0 0 0 2 4.393V2H1v3.5l.5.5H5V5H2.811a6.008 6.008 0 1 1-.135 5.77l-.887.462a7 7 0 0 0 11.718 1.092m-3.361-.97l.708-.707L8 7.792V4H7v4l.146.354z" clip-rule="evenodd" />
+                        </svg>
+                        <b style="">Previous Questions</b></p>
+                </div>
+                <div>
+                    <ul class="prev_questionslist">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!--sidebar ends  -->
+      <!-- rightwing starts -->
+      <div class="rightwing " id="rwing">
+        <!-- start of section -->
+        <div class="chatbox-main" >
+            <div class="chatbox-header">
+                <div class="header-rightside">
+                    <div class="header-title">
+                        <div style="display: flex;align-items: center;gap: 5px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#102345" class="bi bi-list" viewBox="0 0 16 16" onclick="toggle_historybar(this)" style="cursor: pointer;">
+                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                            </svg>
+                            <img src="../static/newlogos/gen.svg" alt="" srcset="" id="logo2" class="hidelogoimg">
+                        </div>
+                        <span class="title">Enterprise Dataverse</span> 
+                    </div>
+                    <!-- <div class="utilitycontainer"> --> 
+                    <div class="action-btns" style="flex: 1 1 40%;">
+                        <!-- <div class="h-dropdownparent"> -->
+                            <div class="showtablesli-parent">
+                                <button type="button">
+                                    <span class="current-selected-table"></span> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                    </svg>
+                                </button>
+                                <ul class="selecttbl" style="">
+                                </ul>
+                            </div>
+                        <!-- </div> -->
+                        <div class="h-actionbtns">
+                            <div id="sliderparentdiv" >
+                                <label class="switch" id="g-toggl">
+                                    <input type="checkbox" id="checkgraph" onclick="getgraphvalue(this)" />
+                                    <div class="slider round">
+                                      <span class="on" >GRAPH ON</span>
+                                      <span class="off" >GRAPH OFF</span>
+                                    </div>
+                                  </label>
+                                </div>
+                            <div id="dc1" style="display: flex;align-items: center;cursor: pointer;" onclick="opendatacatalogue()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#202020" class="bi bi-database-check" viewBox="0 0 16 16">
+                                    <title>Data Catalog</title>
+                                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514"/>
+                                    <path d="M12.096 6.223A5 5 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.5 4.5 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.5 4.5 0 0 1-.813-.927Q8.378 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.6 4.6 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10q.393 0 .774-.024a4.5 4.5 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777M3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4"/>
+                                </svg>
+                            </div>
+                            <div id="sg1" style="display: flex;align-items: center;cursor: pointer;" onclick="opensopguidemodal()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25 31.452" fill="#202020">
+                                        <title>SOP Guide</title>
+                                        <g id="basil--document-outline" transform="translate(-4.25 -2.25)">
+                                        <path id="Path_12" data-name="Path 12" d="M15.75,13a.75.75,0,0,0-.75-.75H9a.75.75,0,0,0,0,1.5h6a.75.75,0,0,0,.75-.75m0,4a.75.75,0,0,0-.75-.75H9a.75.75,0,0,0,0,1.5h6a.75.75,0,0,0,.75-.75" transform="translate(4.75 8.537)" fill=""></path>
+                                        <path id="Path_13" data-name="Path 13" d="M8.685,2.25A4.435,4.435,0,0,0,4.25,6.685V29.266A4.435,4.435,0,0,0,8.685,33.7H24.815a4.435,4.435,0,0,0,4.435-4.435V11.473a2.818,2.818,0,0,0-.571-1.7l-4.835-6.4A2.823,2.823,0,0,0,21.592,2.25ZM6.669,6.685A2.017,2.017,0,0,1,8.685,4.669H20.379v7.092a1.21,1.21,0,0,0,1.21,1.21h5.242v16.3a2.017,2.017,0,0,1-2.016,2.016H8.685a2.017,2.017,0,0,1-2.016-2.016Z" fill="" fill-rule="evenodd"></path>
+                                        </g>
+                                    </svg>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20">
+                                        <title>SOP Guide</title>
+                                        <g id="Group_359" data-name="Group 359" transform="translate(-244 2780)">
+                                          <g id="Rectangle_1571" data-name="Rectangle 1571" transform="translate(244 -2780)" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+                                            <rect width="20" height="20" stroke="none"/>
+                                            <rect x="0.5" y="0.5" width="19" height="19" fill="none"/>
+                                          </g>
+                                          <g id="hugeicons--google-doc" transform="translate(245 -2778)">
+                                            <path id="Path_217" data-name="Path 217" d="M15,2.5V3.667c0,1.1,0,1.65.342,1.991S16.233,6,17.333,6H18.5" transform="translate(-5)" fill="none" stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+                                            <path id="Path_218" data-name="Path 218" d="M4,10.75v-5c0-1.768,0-2.652.549-3.2S5.983,2,7.75,2h2.608a1.334,1.334,0,0,1,.5.047,1.326,1.326,0,0,1,.386.319l2.392,2.393a1.326,1.326,0,0,1,.319.386,1.328,1.328,0,0,1,.047.5V10.75c0,1.768,0,2.652-.549,3.2s-1.433.549-3.2.549H7.75c-1.768,0-2.652,0-3.2-.549S4,12.517,4,10.75M6.5,8.5h5m-5,2.875H9.106" fill="none" stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+                                          </g>
+                                        </g>
+                                      </svg>                                                              -->
+                            </div>
+                            <div style="display: flex;align-items: center;cursor: pointer;" onclick="refreshchat()">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="18.691" height="19" viewBox="0 0 18.691 18.539" fill="#202020">
+                                    <title>Refresh</title>
+                                    <path id="refresh" d="M21,11.436A8.605,8.605,0,0,0,4.532,9.311M4,5.062v4.25H8.25M4,13.561a8.605,8.605,0,0,0,16.468,2.125M21,19.936v-4.25H16.749" transform="translate(-3.154 -3.23)" fill="none" stroke="#102345" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                                </svg>   -->
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20">
+                                    <title>Refresh</title>
+                                    <g id="Group_358" data-name="Group 358" transform="translate(-268 2780)">
+                                      <g id="Rectangle_1569" data-name="Rectangle 1569" transform="translate(268 -2780)" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+                                        <rect width="20" height="20" stroke="none"/>
+                                        <rect x="0.5" y="0.5" width="19" height="19" fill="none"/>
+                                      </g>
+                                      <path id="tabler--refresh" d="M15,8.817A5.569,5.569,0,0,0,4.344,7.442M4,4.692v2.75H6.75M4,10.192a5.569,5.569,0,0,0,10.656,1.375M15,14.317v-2.75H12.25" transform="translate(268.5 -2779.515)" fill="none" stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/>
+                                    </g>
+                                </svg> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="#202020">
+                                    <title>Refresh</title>
+                                    <path stroke-width="3" fill="" d="M3.68 11.333h-.75zm0 1.667l-.528.532a.75.75 0 0 0 1.056 0zm2.208-1.134A.75.75 0 1 0 4.83 10.8zM2.528 10.8a.75.75 0 0 0-1.056 1.065zm16.088-3.408a.75.75 0 1 0 1.277-.786zM12.079 2.25c-5.047 0-9.15 4.061-9.15 9.083h1.5c0-4.182 3.42-7.583 7.65-7.583zm-9.15 9.083V13h1.5v-1.667zm1.28 2.2l1.679-1.667L4.83 10.8l-1.68 1.667zm0-1.065L2.528 10.8l-1.057 1.065l1.68 1.666zm15.684-5.86A9.16 9.16 0 0 0 12.08 2.25v1.5a7.66 7.66 0 0 1 6.537 3.643zM20.314 11l.527-.533a.75.75 0 0 0-1.054 0zM18.1 12.133a.75.75 0 0 0 1.055 1.067zm3.373 1.067a.75.75 0 1 0 1.054-1.067zM5.318 16.606a.75.75 0 1 0-1.277.788zm6.565 5.144c5.062 0 9.18-4.058 9.18-9.083h-1.5c0 4.18-3.43 7.583-7.68 7.583zm9.18-9.083V11h-1.5v1.667zm-1.276-2.2L18.1 12.133l1.055 1.067l1.686-1.667zm0 1.066l1.686 1.667l1.054-1.067l-1.686-1.666zM4.04 17.393a9.2 9.2 0 0 0 7.842 4.357v-1.5a7.7 7.7 0 0 1-6.565-3.644z" />
+                                </svg>                        
+                            </div>
+                        </div>
+                        <!-- <div class="profile-dropdown-parent">
+                                    <svg id="mylogout" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#102345" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <title>Logout</title>
+                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                    </svg>
+                                </g>
+                                </svg>                              
+                        </div> -->
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="configuration" style="display: none;" id="sidepan">
+                    <div title="toggle sidebar" id="togglesidebar" style="position: absolute;left:-18px;top: 0px;height:42px;width:18px;box-shadow: rgba(0, 0, 0, 0.16) -1.4px 1px 2px;cursor: pointer;border-radius: 6px;">
+                            
+                        <!-- <svg id="svg1"  title="toggle sidebar" xmlns="http://www.w3.org/2000/svg" width="25" height="25"  fill="#102345" class="bi bi-chevron-double-left dsp-none" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                            <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                        </svg> -->
+
+                        <svg id="svg1"  title="toggle sidebar" xmlns="http://www.w3.org/2000/svg" width="18" height="42" viewBox="0 0 18 42" class="dsp-none">
+                            <g id="Group_364" data-name="Group 364" transform="translate(-2719 -435)">
+                              <path id="Rectangle_1573" data-name="Rectangle 1573" d="M5,0H18a0,0,0,0,1,0,0V42a0,0,0,0,1,0,0H5a5,5,0,0,1-5-5V5A5,5,0,0,1,5,0Z" transform="translate(2719 435)" fill="#00aed0"/>
+                              <path id="iconamoon--arrow-up-2-thin" d="M10,0,5,5,0,0" transform="translate(2730.25 451.5) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            </g>
+                        </svg>
+                        <svg id="svg2"  title="toggle sidebar" xmlns="http://www.w3.org/2000/svg" width="18" height="42" viewBox="0 0 18 42">
+                            <g id="Group_360" data-name="Group 360" transform="translate(-2719 -385)">
+                              <path id="Rectangle_1573" data-name="Rectangle 1573" d="M5,0H18a0,0,0,0,1,0,0V42a0,0,0,0,1,0,0H5a5,5,0,0,1-5-5V5A5,5,0,0,1,5,0Z" transform="translate(2719 385)" fill="#00aed0"/>
+                              <path id="iconamoon--arrow-up-2-thin" d="M10,5,5,0,0,5" transform="translate(2730.25 402.5) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            </g>
+                        </svg>
+                        <!-- <svg id="svg2"  title="toggle sidebar" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#102345"  class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                          </svg> -->
+                    </div>
+                    <div>
+                        <p style="margin:5px 0px;font-size: 14px;padding: 0px 0px 0px 10px;color:black;line-height: 14px;">Currency</p>
+                        <div>
+                            <form action="" id="currencyform">
+                                <div class="mkcenter">
+                                    <label><input type="radio" value="Absolute" name="currency" checked onclick="select_curr_func('Absolute')">Absolute</label>
+                                </div>
+                                <div class="mkcenter">
+                                    <label><input type="radio" value="Thousands" name="currency" onclick="select_curr_func('Thousands')">Thousands</label>
+                                </div>
+                                <div class="mkcenter">
+                                    <label><input type="radio" value="Millions" name="currency" onclick="select_curr_func('Millions')" checked>Millions</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div style="padding:10px 5px;border: 1px solid #EEEEEE;border-left: none;">
+                       <div class="experiencetab">
+                            <button class="selectedbt0" type="button"  onclick="selectexperience(this)">
+                                Experience
+                                
+                            </button>
+                            <button class="selectedbt0" type="button"  onclick="selectexperience1(this)">
+                                Excl. Experience
+                                
+                            </button>
+                       </div>
+                    </div>
+                    <div style="padding:10px 5px;border: 1px solid #EEEEEE;border-left: none;border-top: none;">
+                        <div class="showall_acc_parent" >
+                            <button class="selectedbt3" type="button" onclick="showall_accounts(this)" style="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="" class="bi bi-table" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"/>
+                                </svg>
+                                Show Accounts
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <ul id="chatbox-main-ul">
+                <li class="leftli">
+                    <div class="bot-response Pli">
+                        <div class="botlogodiv">
+                            <img src="../static/newlogos/scouticon1080x1080.png" alt="" srcset="">
+                        </div>
+                        <div id="bot-response-0" style="">
+                            <div class="response">
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                </li>
+               
+            </ul>
+            <footer>
+                <span id="inputalert" style="font-size: 11px;color:#f83b46;margin-left: 15px;display:none">* Input limit exceeded.only 500 characters are allowed...</span>
+                <div class="footer-actionbtns">
+                    <div class="textarea-parent">
+                        <textarea name="" id="textareainp" rows="1" placeholder="Ask your question" disabled></textarea>
+                        <div class="sendbtn-parent">
+                            <div class="s-icons2">
+                                <!-- <img id="sendbtn" src="../static/newlogos/send.svg" alt="" srcset="" style="display: block;">
+                                <img id="processbtn" src="../static/newlogos/process-square.svg" alt="" srcset="" style="display: none;"> -->
+                                <div id="sendbtn" style="display: block;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="vuesax/bold/send-2">
+                                    <g id="send-2">
+                                    <path id="Vector" d="M13.45 2.4667L5.925 4.9667C0.866665 6.65837 0.866665 9.4167 5.925 11.1L8.15833 11.8417L8.9 14.075C10.5833 19.1334 13.35 19.1334 15.0333 14.075L17.5417 6.55837C18.6583 3.18337 16.825 1.3417 13.45 2.4667ZM13.7167 6.95004L10.55 10.1334C10.425 10.2584 10.2667 10.3167 10.1083 10.3167C9.95 10.3167 9.79167 10.2584 9.66667 10.1334C9.425 9.8917 9.425 9.4917 9.66667 9.25004L12.8333 6.0667C13.075 5.82504 13.475 5.82504 13.7167 6.0667C13.9583 6.30837 13.9583 6.70837 13.7167 6.95004Z" fill="white"/>
+                                    </g>
+                                    </g>
+                                    </svg>
+                                    </div>
+                                <div id="processbtn" style="display: none;cursor: not-allowed;"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Frame 232">
+                                    <g id="Vector">
+                                    <path d="M0 10C0 4.47715 4.47715 0 10 0H30C35.5228 0 40 4.47715 40 10V30C40 35.5228 35.5228 40 30 40H10C4.47715 40 0 35.5228 0 30V10Z" fill="#00AECF"/>
+                                    <path d="M14 14H28V28H14V14Z" fill="white"/>
+                                    </g>
+                                    </g>
+                                    </svg>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-desclaimer">
+                    <div class="desclaimer">This product utilizes AI.Please check for inaccuracies.<span style="font-size: 12px; font-family: Roboto; font-weight: 500; line-height: 18px; word-wrap: break-word"><a id="termpdf" href="/Protected/TermsOfUse.pdf" target="_blank" style="color: #00AECF;"">Terms</a></span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end of section -->
+        <!--start sop section -->
+            <div id="sopsection-parent">
+            
+            </div>
+        <!-- end of sop section -->
+        <!-- start of mymodal -->
+            <div class="mymodal">
+                    <div class="mymodal-content">
+                    
+                    </div>
+            </div>  
+        <!-- end of mymodal -->
+      </div>
+      <!-- rightwing ends -->
+    </div>
+    <!-- container ends -->
+   <script src="{{url_for('static',filename='js/platform.min.js')}}"></script>
+   <script src="{{url_for('static',filename='js/script2.js')}}"></script>
+</body>
+</html>
+
+
