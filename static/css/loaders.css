@@ -1,0 +1,473 @@
+.xloader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #050505;
+    border-bottom-color: #ff555f;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: auto 0px;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
+  .sloader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .sloader::after,
+  .sloader::before {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #ff555f #ff555f;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+  .sloader::before {
+    width: 32px;
+    height: 32px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 1.5s linear infinite;
+  }
+      
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+
+  /* From Uiverse.io by SchawnnahJ */ 
+  .mydataframe table,
+  .mydataframe th,
+  .mydataframe td {
+    border: 1px solid lightgray;
+    text-align: left;
+  }
+  
+ .mydataframe table {
+    overflow: auto;
+    width: fit-content;
+    /* width: 100%; */
+    max-width: 50vw;
+    max-height: 300px;
+    display: block;
+    border-spacing: 0;
+    /* border-radius: 5px; */
+    font-size: 13px;
+    /* margin-bottom: 10px; */
+  }
+  
+  .mydataframe tbody {
+    white-space: nowrap;
+  }
+  
+  .mydataframe th,
+  .mydataframe td {
+    padding: 5px 15px 5px 10px;
+    border-top-width: 0;
+    border-left-width: 0;
+    white-space: break-spaces;
+    vertical-align: middle;
+  }
+
+  .mydataframe td{
+    background-color:#f9f9f9;
+
+  }
+  .mydataframe thead tr th {
+    position: sticky;
+    top: 0;
+    background: #f4f5f8;
+    vertical-align: middle;
+  }
+  
+   .mydataframe thead tr th:first-child {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #f4f5f8;
+    vertical-align: middle;
+    z-index: 4;
+  } 
+  
+  .mydataframe tbody tr th:first-child {
+    position: sticky;
+    left: 0;
+    background: #f4f5f8;
+    vertical-align: bottom;
+  } 
+  .mydataframe th:last-child,
+  .mydataframe td:last-child {
+    border-right-width: 0;
+  }
+  
+  .mydataframe tr:last-child td {
+    border-bottom-width: 0;
+  }
+  .mydataframe tbody tr:last-child th:first-child {
+    border-bottom-width: 0;
+  }
+   
+  .mymodal-content table{
+    max-height: 75vh;
+    font-size: 13px;
+    max-width: 85vw;
+  }
+
+  /* data catalogue  */
+
+  .boxparent2  .mydataframe2 table,
+  .boxparent2 .mydataframe2 th,
+  .boxparent2 .mydataframe2 td {
+     border: 1px solid lightgray;
+     text-align: left;
+   }
+   
+   .boxparent2 .mydataframe2 table {
+     /* width: 100%; */
+     width: fit-content;
+     overflow: auto;
+     max-height: 300px;
+     display: block;
+     border-spacing: 0;
+     /* border-radius: 5px; */
+     font-size: 13px;
+     margin-bottom: 10px;
+   }
+   
+   .boxparent2 .mydataframe2 tbody {
+     white-space: nowrap;
+   }
+   
+   .boxparent2 .mydataframe2 th,
+   .boxparent2 .mydataframe2 td {
+     white-space: break-spaces;
+     padding: 5px 10px;
+     border-top-width: 0;
+     border-left-width: 0;
+     /* overflow-wrap: anywhere; */
+     vertical-align: middle;
+   }
+ 
+   .boxparent2 .mydataframe2 td{
+     background-color:#f9f9f9;
+ 
+   }
+   .boxparent2 .mydataframe2 thead tr th {
+     position: sticky;
+     top: 0;
+     background: #f4f5f8;
+     vertical-align: bottom;
+   }
+   
+   .boxparent2 .mydataframe2 thead tr th:first-child {
+     /* position: sticky;
+     top: 0;
+     left: 0;
+     background: #f4f5f8;
+     vertical-align: bottom; */
+     left: 0;
+     top: 0;
+     z-index: 1;
+   } 
+   
+   .boxparent2 .mydataframe2 tbody tr th:first-child {
+     position: sticky;
+     left: 0;
+     background: #f4f5f8;
+     vertical-align: bottom;
+   } 
+   .boxparent2 .mydataframe2 th:last-child,
+   .boxparent2 .mydataframe2 td:last-child {
+     border-right-width: 0;
+   }
+   
+   .boxparent2 .mydataframe2 tr:last-child td {
+     border-bottom-width: 0;
+   } 
+  
+   /* .boxparent2  .mydataframe table,
+  .boxparent2 .mydataframe th,
+  .boxparent2 .mydataframe td {
+     border: 1px solid lightgray;
+     text-align: left;
+     width: 100% !important;
+   }
+   
+   .boxparent2 .mydataframe table {
+     overflow: auto;
+     width: fit-content;
+     max-width: 100vw;
+     max-height: 300px;
+     display: block;
+     border-spacing: 0;
+     border-radius: 5px;
+     font-size: small;
+     margin-bottom: 10px;
+   }
+   
+   .boxparent2 .mydataframe tbody {
+     white-space: nowrap;
+   }
+   
+   .boxparent2 .mydataframe th,
+   .boxparent2 .mydataframe td {
+     padding: 5px 10px;
+     border-top-width: 0;
+     border-left-width: 0;
+   }
+ 
+   .boxparent2 .mydataframe td{
+     background-color:#f9f9f9;
+ 
+   }
+   .boxparent2 .mydataframe thead tr th {
+     position: sticky;
+     top: 0;
+     background: #f4f5f8;
+     vertical-align: bottom;
+   }
+   
+   .boxparent2 .mydataframe thead tr th:first-child {
+     position: sticky;
+     top: 0;
+     left: 0;
+     background: #f4f5f8;
+     vertical-align: bottom;
+   } 
+   
+   .boxparent2 .mydataframe tbody tr th:first-child {
+     position: sticky;
+     left: 0;
+     background: #f4f5f8;
+     vertical-align: bottom;
+   } 
+   .boxparent2 .mydataframe th:last-child,
+   .boxparent2 .mydataframe td:last-child {
+     border-right-width: 0;
+   }
+   
+   .boxparent2 .mydataframe tr:last-child td {
+     border-bottom-width: 0;
+   }  */
+   @media screen and (min-width:1000px) { 
+     
+  }
+   @media screen and (min-width:700px) and (max-width: 1000px) { 
+     
+  }
+
+   @media screen and (min-width:500px) and (max-width: 750px) { 
+    .mydataframe table {
+      max-width:65vw ;
+    }
+  }
+
+   @media screen and (max-width: 500px) { 
+    .mydataframe table {
+      max-width:55vw ;
+    }
+   }
+
+   /* .mydataframe table[data-sort-order="desc"] thead tr th::after {
+        content: "\2193";
+        font-size: 15px;
+        color: black;
+        margin-left: 3px;
+    }
+
+    .mydataframe table[data-sort-order="asc"] thead tr th::after {
+        content: "\2191";
+        font-size: 15px;
+        color: black;
+        margin-left: 3px;
+    } */
+
+    /* .mydataframe table  thead tr th::after {
+      content: "\2193";
+      font-size: 13px;
+      vertical-align: middle;
+      color: black;
+      position: absolute;
+      right: 0.1em;
+  }
+
+  .mydataframe table thead tr th::before {
+      content: "\2191";
+      font-size: 13px;
+      vertical-align: middle;
+      color: rgb(228, 10, 10);
+      position: absolute;
+      right: 0.5em;
+  } */
+
+
+  /* page loader start */
+.pageloader {
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: absolute;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+  }
+
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+  }
+
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff, 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff, 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.5), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5), 0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff, -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.5), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff, -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+  }
+}  /* page loader ends thinkingloader*/  
+
+.dots1 {
+  display: inline-block;
+  margin-left: 5px;
+}
+.dot1 {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background-color: #02ADCF;
+  opacity: 0.3;
+  animation: blinkr 1.5s infinite;
+}
+.dot1:nth-child(3) {
+  animation-delay: 0.5s;
+  opacity: 1;
+}
+/* .dot1:nth-child(4) {
+  animation-delay: 1s;
+}
+.dot1:nth-child(5) {
+  animation-delay: 1.5s;
+  opacity: 1;
+} */
+@keyframes blinkr {
+  0%, 100% {
+      opacity: 0.3;
+  }
+  50% {
+      opacity: 1;
+  }
+}
+
+
+.deleteloader {
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpinn 1.1s infinite ease;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpinn {
+
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+  }
+
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+  }
+
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff, 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff, 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.5), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5), 0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff, -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.5), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff, -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+  }
+}
+
+
