@@ -1,0 +1,117 @@
+@media (min-width: 700px) and (max-width: 1000px) {
+   
+    .header-rightside{
+        flex-direction: column;
+    }
+
+    .botlogodiv img{
+        width: 35px;
+        height: 35px;
+    }
+    .action-btns {
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .showtablesli-parent button {
+        width: 200px;
+    }
+  
+  } 
+
+
+@media screen and (max-width: 750px) { 
+    .chatbox-header{
+        padding: 8px 11px 8px 11px;
+    }
+
+  
+    .header-rightside{
+        width: 100%;
+        flex: 1 1 100%;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .utilitycontainer {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+   #chatbox-main-ul {
+     /* padding: 20px 5%; */
+     padding: 20px 15px;
+   }
+   footer{
+       /* margin: 0 5%; */
+       margin: 0 15px;
+   }
+   .header-title {
+       display: flex;
+   }
+
+  .action-btns {
+      /* gap: 10px; */
+      justify-content: space-between;
+  }
+
+  .showtablesli-parent button {
+      width: 200px;
+  }
+
+  .table-utility {
+      margin-top: 5px;
+  }
+
+ .footer-desclaimer  {
+     margin: 8px 0px;
+ }
+  
+ .mysearchutility input[type='search'] {
+    min-width: 200px;
+ }
+ .textarea-parent {
+    padding: 8px 14px;
+}
+
+.botlogodiv img{
+    width: 35px;
+    height: 35px;
+}
+
+} 
+
+
+
+@media screen and (max-width: 500px) { 
+    .drop-menubtns{
+        flex-direction: column;
+    }
+   
+    .action-btns {
+         flex-direction: column;
+    }
+    .textarea-parent {
+        padding: 8px 14px;
+    }
+    .botlogodiv img{
+        width: 35px;
+        height: 35px;
+    }
+    .header-rightside{
+        width: 100%;
+        flex: 1 1 100%;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .h-dropdownparent {
+        width: 100%;
+        justify-content: space-around;
+    }
+    .h-actionbtns {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    
+}
