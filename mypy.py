@@ -152,8 +152,8 @@ session_logger.addHandler(session_handler)
 @app.route('/')
 #@login_required
 def main_page():
-    name='Shinde,Pranay'
-    ohr_email='850077057@genpact.com'
+    name='hjvkjgvjhvbjk'
+    ohr_email='jhbjjbjhb'
     session['userinfo_response']={'name':name,'preferred_username':ohr_email}
     return render_template('main2.html')
 
